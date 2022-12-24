@@ -8,6 +8,8 @@ import { Product } from '../product';
 })
 export class ProductListComponent implements OnInit {
 
+  shoppingCart: Product[] = [];
+
   allProducts: Product[] = [
     {
       p_id : 1,
@@ -80,4 +82,11 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addToCart(addProduct: Product){
+    this.shoppingCart.push(addProduct);
+  }
+
+  removeFromCart(item: Product){
+    this.shoppingCart.splice(this.shoppingCart.indexOf(item), 1);
+  }
 }
