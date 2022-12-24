@@ -8,7 +8,24 @@
                     PRODUCT LIST
                 </div>
                 <div class="card-body">
-
+                    <!-- here we have to traverse through the allProducts array and display the product information-->
+                    <div class="row">
+                        <div class="col-xl-3 col-sm-6 col-4" *ngFor="let product of allProducts">
+                            <div class="card border border-success">
+                                <img 
+                                    [src]="product.product_image" 
+                                    class="card-img-top" 
+                                    [alt]="product.product_name"
+                                    height="250px"
+                                    width="120px">
+                                <div class="card-body">
+                                    <div class="card-title">{{ product.product_name }}</div>
+                                    <div class="card-text">{{ product.product_price }}</div>
+                                    <button type="button" class="btn btn-primary">Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-footer">
                     @Copyright
